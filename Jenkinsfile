@@ -22,8 +22,8 @@ pipeline {
         stage('terraform'){
             steps{
                 git clone https://github.com/hashicorp/learn-terraform-provision-eks-cluster
-                terraform init
-                terraform apply
+                 sh 'terraform init'
+                 sh  'terraform apply --auto-approve'
             
             }
         }
