@@ -19,5 +19,13 @@ pipeline {
                 sh 'docker push srikanth458/images:DEV'
             }
         }
+        stage('terraform'){
+            steps{
+                git clone https://github.com/hashicorp/learn-terraform-provision-eks-cluster
+                terraform init
+                terraform apply
+            
+            }
+        }
     }
 }
